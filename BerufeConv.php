@@ -114,15 +114,7 @@ class BerufeConv {
         }
         echo '</ul>';
 
-        echo '<div id="myTabContent" class="tab-content" style="
-                width: 40%;
-                border-radius: 7px;
-                background-color: cornsilk;
-                color: black;
-                margin: 2em auto;
-                box-shadow: 1em 1em 10px;
-                padding: 1em 2em;
-                ">';
+        echo '<div id="myTabContent" class="tab-content" style="width: 40%;border-radius: 7px;background-color: cornsilk;color: black;margin: 2em auto;box-shadow: 1em 1em 10px;padding: 1em 2em;">';
         foreach ($liContent as $index => $content) {
             echo $content;
         }
