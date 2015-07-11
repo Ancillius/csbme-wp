@@ -19,7 +19,6 @@ class BerufeConv {
     private function getLines(){
         $handle = $this->getReadFilHandler();
         $beruf = [];
-        $output = [];
         $berufsfeld = null;
         while ($data = fgetcsv($handle,1000,";")) {
             if(empty($data[0])) continue;
@@ -117,10 +116,10 @@ class BerufeConv {
         echo '</div>';
         echo '</div>';
         ob_start();
-        ?><script>jQuery(function{"a[aria-controls]").click(function() { location.hash = $(this).attr('aria-controls') })}</script>
-    <?php
-        $script = ob_get_contents();
-        echo $script;
+        ?>
+                <script>jQuery(function() { jQuery("a[aria-controls]").click(function() { location.hash = $(this).attr('aria-controls') }) })</script>
+        <?php
+        echo ob_get_contents();
         ob_end_clean();
 
     }
@@ -146,7 +145,7 @@ class BerufeConv {
     }
 
     public function run() {
-        print_r($this->renderHtml());
+        $this->renderHtml();
     }
 }
 
