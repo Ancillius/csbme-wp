@@ -42,13 +42,7 @@ class BerufeConv {
         ?>
         <style type="text/css">
             #MyTabContent {
-                width: 40%;
-                border-radius: 7px;
-                background-color: cornsilk;
-                color: black;
-                margin: 2em auto;
-                box-shadow: 1em 1em 10px;
-                padding: 1em 2em;
+
             }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -120,7 +114,15 @@ class BerufeConv {
         }
         echo '</ul>';
 
-        echo '<div id="myTabContent" class="tab-content">';
+        echo '<div id="myTabContent" class="tab-content" style="
+                width: 40%;
+                border-radius: 7px;
+                background-color: cornsilk;
+                color: black;
+                margin: 2em auto;
+                box-shadow: 1em 1em 10px;
+                padding: 1em 2em;
+                ">';
         foreach ($liContent as $index => $content) {
             echo $content;
         }
