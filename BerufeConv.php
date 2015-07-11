@@ -40,8 +40,20 @@ class BerufeConv {
     public function renderHtml() {
         ob_start();
         ?>
+        <style type="text/css">
+            #MyTabContent {
+                width: 40%;
+                border-radius: 7px;
+                background-color: cornsilk;
+                color: black;
+                margin: 2em auto;
+                box-shadow: 1em 1em 10px;
+                padding: 1em 2em;
+            }
+        </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
         <?php
         $head = ob_get_contents();
         ob_end_clean();
