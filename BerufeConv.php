@@ -41,6 +41,7 @@ class BerufeConv {
         ?>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script>jQuery(function() { jQuery("a[aria-controls]").click(function() { location.hash = $(this).attr('aria-controls') }) })</script>
 
         <?php
         $head = ob_get_contents();
@@ -56,8 +57,8 @@ class BerufeConv {
             ob_start();
             ?>
             <li role="presentation" class="dropdown">
-                <a href="#<?=$bnr?>" id="<?= $bnr ?>" class="dropdown-toggle" data-toggle="dropdown" aria-controls="<?=$bnr?>-contents" aria-expanded="false"><?=$berufsfeld?> <span class="caret"></span></a>
-                <ul class="dropdown-menu" aria-labelledby="<?=$bnr?>" id="<?=$bnr?>-contents">
+                <a href="#<?=$bnr?>" id="lid-<?= $bnr ?>" class="dropdown-toggle" data-toggle="dropdown" aria-controls="<?=$bnr?>-contents" aria-expanded="false"><?=$berufsfeld?> <span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="<?=$bnr?>" id="uld-<?=$bnr?>-contents">
             <?php
             $liHead[$bnr] = ob_get_contents();
             ob_end_clean();
@@ -71,7 +72,7 @@ class BerufeConv {
                 $bau = $this->getBerufsBau();
                 ob_start();
                 ?>
-                <li><a href="#content-<?=$bnr.$index?>" role="tab" id="<?=$bnr.$index?>-tab" data-toggle="tab" aria-controls="content-<?=$bnr.$index?>" aria-expanded="true"><?=$titel?></a></li>
+                <li><a href="#content-<?=$bnr.$index?>" role="tab" id="lit-<?=$bnr.$index?>-tab" data-toggle="tab" aria-controls="content-<?=$bnr.$index?>" aria-expanded="true"><?=$titel?></a></li>
                 <?php
                 $liItem[$bnr][$index] = ob_get_contents();
                 ob_end_clean();
@@ -96,7 +97,7 @@ class BerufeConv {
             echo $menuTab;
             ob_start();
             ?>
-            <ul class="dropdown-menu" aria-labelledby="<?=$bnr.'-items'?>" id="<?=$bnr.'-items'?>-contents">
+            <ul class="dropdown-menu" aria-labelledby="<?=$bnr.'-items'?>" id="ul-<?=$bnr.'-items'?>-contents">
             <?php
             echo ob_get_contents();
             ob_end_clean();
@@ -108,7 +109,7 @@ class BerufeConv {
         }
         echo '</ul>';
 
-        echo '<div id="myTabContent" class="tab-content" style="width: 40%;border-radius: 7px;background-color: cornsilk;color: black;margin: 2em auto;box-shadow: 1em 1em 10px;padding: 1em 2em;">';
+            echo '<div id="myTabContent" class="tab-content" style="width: 65%;border-radius: 7px;background-color: cornsilk;color: black;margin: 2em auto;box-shadow: 1em 1em 10px;padding: 1em 2em;">';
         foreach ($liContent as $index => $content) {
             echo $content;
         }
